@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Check Age</title>
-    <script src="../JS_FILE/javaScript.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Age Check · Conditional Statements</title>
+        <link rel="stylesheet" href="./styles.css">
+        <script defer src="../JS_FILE/javaScript.js"></script>
 </head>
-<body>
-    <fieldset style="width: 500px;">
-        <legend>Age Validation</legend>
-        <p>Enter your age to check eligibility:</p>
-        <input type="number" id="ageInput" placeholder="Enter your age">
-        <button onclick="checkAge()" style="background-color: red; color: white;">Check Age</button>
-        <p id="result"></p>
-    </fieldset>
+<body class="page-root">
+    <main class="card" aria-labelledby="age-title">
+        <h1 id="age-title" class="card-title">Age Validation</h1>
+        <p class="muted">Enter your age to check eligibility.</p>
+
+        <label for="ageInput" class="label">Your age</label>
+        <div class="row">
+            <input type="number" id="ageInput" name="age" inputmode="numeric" min="0" placeholder="e.g. 27" aria-describedby="age-help">
+            <button id="checkAgeBtn" class="btn primary" onclick="checkAge()">Check Age</button>
+        </div>
+        <p id="age-help" class="muted small">We only need your age to demonstrate conditional logic. No data is stored.</p>
+
+        <div id="result" role="status" aria-live="polite" class="result"></div>
+
+        <footer class="card-footer">
+            <a href="BankAccount.html" class="link">Try the Bank Account demo</a>
+        </footer>
+    </main>
 </body>
 </html>

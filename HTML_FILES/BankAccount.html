@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Check Bank Account</title>
-    <script src="../JS_FILE/javaScript.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bank Account · Conditional Statements</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="../JS_FILE/javaScript.js"></script>
 </head>
-<body>
-    <fieldset style="width: 300px;">
-        <legend style="color: blue; font-weight: bold;font-family: sans-serif;"> Bank Deposit & Withdrawal System</legend>
-        <p>Account Balance starts at 400,000</p>
-        <input type="number" id="depositInput" placeholder="Enter Amount to Deposit">
-        <button onclick="depositMoney()">Deposit Money</button> <br><br>
-        <input type="number" id="withdrawInput" placeholder="Enter Amount to Withdraw">
-        <button onclick="withdrawMoney()">Withdraw Money</button>
-        <p id="bankResult"></p>
-    </fieldset>
+<body class="page-root">
+    <main class="card" aria-labelledby="bank-title">
+        <h1 id="bank-title" class="card-title">Bank Deposit & Withdrawal</h1>
+        <p class="muted">Demo account starting balance: <strong id="balanceDisplay">400,000</strong></p>
+
+        <label for="depositInput" class="label">Deposit amount</label>
+        <div class="row">
+            <input type="number" id="depositInput" name="deposit" min="0" placeholder="0">
+            <button class="btn primary" onclick="depositMoney()">Deposit</button>
+        </div>
+
+        <label for="withdrawInput" class="label">Withdraw amount</label>
+        <div class="row" style="margin-top:8px">
+            <input type="number" id="withdrawInput" name="withdraw" min="0" placeholder="0">
+            <button class="btn" onclick="withdrawMoney()">Withdraw</button>
+        </div>
+
+        <div id="bankResult" role="status" aria-live="polite" class="result"></div>
+
+        <footer class="card-footer">
+            <a href="checkAge.html" class="link">Try the Age check demo</a>
+        </footer>
+    </main>
 </body>
 </html>
